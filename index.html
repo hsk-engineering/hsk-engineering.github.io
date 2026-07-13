@@ -10,7 +10,9 @@
             --secondary-color: #2b6cb0;
             --background-color: #f7fafc;
             --text-color: #2d3748;
+            --card-bg: #ffffff;
         }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -18,68 +20,136 @@
             padding: 0;
             color: var(--text-color);
             background-color: var(--background-color);
+            overflow-x: hidden;
         }
+
         header {
             background-color: var(--primary-color);
             color: white;
-            padding: 2rem 0;
+            padding: 4rem 0;
             text-align: center;
+            background-image: linear-gradient(rgba(26, 54, 93, 0.9), rgba(43, 108, 176, 0.8)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
         }
+
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 3rem;
+            letter-spacing: 1px;
         }
+
         header p {
-            margin-top: 0.5rem;
-            font-size: 1.2rem;
-            opacity: 0.9;
+            margin-top: 1rem;
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-weight: 300;
         }
+
         nav {
             background-color: var(--secondary-color);
             padding: 1rem;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
+
         nav a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
+            transition: color 0.3s ease;
         }
+
         nav a:hover {
-            text-decoration: underline;
+            color: #bee3f8;
         }
+
         .container {
             max-width: 1100px;
             margin: auto;
-            padding: 2rem;
+            padding: 3rem 2rem;
         }
+
         .section-title {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 10px;
+            font-size: 2.2rem;
+            position: relative;
         }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
         }
+
+        /* Card Styling & Hover Animations */
         .card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+            display: flex;
+            flex-direction: column;
         }
+
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--secondary-color);
+        }
+
+        .card-content {
+            padding: 1.8rem;
+            flex-grow: 1;
+        }
+
         .card h3 {
             color: var(--primary-color);
             margin-top: 0;
+            font-size: 1.4rem;
         }
+
+        /* Scroll Animation Classes */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         footer {
             background-color: var(--primary-color);
             color: white;
             text-align: center;
-            padding: 1.5rem 0;
+            padding: 2.5rem 0;
             margin-top: 2rem;
         }
     </style>
@@ -100,46 +170,68 @@
 
     <div class="container">
         
-        <section id="about">
+        <section id="about" class="fade-in-section">
             <h2 class="section-title">About the Firm</h2>
-            <p>HSK Engineering and Architectural Solutions bridges the gap between robust structural engineering and innovative architectural design. We specialize in comprehensive project workflows, from conceptual drafting to rigorous structural analysis, ensuring every design is both visionary and structurally sound.</p>
+            <p style="text-align: center; font-size: 1.1rem; max-width: 800px; margin: 0 auto;">HSK Engineering and Architectural Solutions bridges the gap between robust structural engineering and innovative architectural design. We specialize in comprehensive project workflows, from conceptual drafting to rigorous structural analysis, ensuring every design is both visionary and structurally sound.</p>
         </section>
 
-        <section id="services">
+        <br><br><br>
+
+        <section id="services" class="fade-in-section">
             <h2 class="section-title">Our Services</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>Structural Analysis & Engineering</h3>
-                    <p>Expert evaluation and mathematical modeling of structural components. Specializing in resolving boundary conditions and determining reaction components for structural layouts.</p>
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=800&auto=format&fit=crop" alt="Structural calculations and engineering blueprints">
+                    <div class="card-content">
+                        <h3>Structural Analysis & Engineering</h3>
+                        <p>Expert evaluation and mathematical modeling of structural components. Specializing in resolving boundary conditions and determining reaction components for structural layouts.</p>
+                    </div>
                 </div>
                 <div class="card">
-                    <h3>3D Modeling & BIM</h3>
-                    <p>Comprehensive building information modeling using industry-standard tools including Revit and SketchUp to visualize complex structural and architectural concepts.</p>
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop" alt="3D Architecture and BIM Modeling">
+                    <div class="card-content">
+                        <h3>3D Modeling & BIM</h3>
+                        <p>Comprehensive building information modeling using industry-standard tools including Revit and SketchUp to visualize complex structural and architectural concepts.</p>
+                    </div>
                 </div>
                 <div class="card">
-                    <h3>Computer-Aided Design (CAD)</h3>
-                    <p>Precision 2D drafting and planar view layouts utilizing AutoCAD. We deliver clean, accurate, and professional documentation for all phases of construction and design.</p>
+                    <img src="https://images.unsplash.com/photo-1503945438517-f65904a52ce6?q=80&w=800&auto=format&fit=crop" alt="AutoCAD drafting and planar layouts">
+                    <div class="card-content">
+                        <h3>Computer-Aided Design (CAD)</h3>
+                        <p>Precision 2D drafting and planar view layouts utilizing AutoCAD. We deliver clean, accurate, and professional documentation for all phases of construction and design.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="portfolio">
+        <br><br><br>
+
+        <section id="portfolio" class="fade-in-section">
             <h2 class="section-title">Selected Projects</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>Flood-Resilient Model Village Hospital</h3>
-                    <p><strong>Focus:</strong> Architectural & Structural Layout</p>
-                    <p>Designed a raised-structure basic health unit to withstand flood events, incorporating specialized design specifications for disaster-resilient healthcare infrastructure.</p>
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop" alt="Modern architectural layout">
+                    <div class="card-content">
+                        <h3>Flood-Resilient Model Village Hospital</h3>
+                        <p><strong>Focus:</strong> Architectural & Structural Layout</p>
+                        <p>Designed a raised-structure basic health unit to withstand flood events, incorporating specialized design specifications for disaster-resilient healthcare infrastructure.</p>
+                    </div>
                 </div>
                 <div class="card">
-                    <h3>Arts Workshop Extension</h3>
-                    <p><strong>Focus:</strong> Design Logic & Modular Systems</p>
-                    <p>Developed an architectural extension featuring modular rainscreen systems. The project included complete structural diagrams, performance observations, and a comprehensive defense presentation.</p>
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Building exterior focusing on modular materials">
+                    <div class="card-content">
+                        <h3>Arts Workshop Extension</h3>
+                        <p><strong>Focus:</strong> Design Logic & Modular Systems</p>
+                        <p>Developed an architectural extension featuring modular rainscreen systems. The project included complete structural diagrams, performance observations, and a comprehensive defense presentation.</p>
+                    </div>
                 </div>
                 <div class="card">
-                    <h3>Science & Technology Park</h3>
-                    <p><strong>Focus:</strong> Geotechnical Investigation</p>
-                    <p>Executed an open-ended laboratory mapping project, conducting essential soil testing including sieve analysis, Atterberg limits, and compaction testing to inform site stability.</p>
+                    <img src="https://images.unsplash.com/photo-1541888086925-0c770f446ec8?q=80&w=800&auto=format&fit=crop" alt="Geotechnical soil analysis site">
+                    <div class="card-content">
+                        <h3>Science & Technology Park</h3>
+                        <p><strong>Focus:</strong> Geotechnical Investigation</p>
+                        <p>Executed an open-ended laboratory mapping project, conducting essential soil testing including sieve analysis, Atterberg limits, and compaction testing to inform site stability.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -147,10 +239,34 @@
     </div>
 
     <footer id="contact">
-        <p>Ready to collaborate? Let's bring your project to life.</p>
+        <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">Ready to collaborate? Let's bring your project to life.</p>
         <p>Email: hamzasakhawat06@gmail.com | Location: Rawalpindi, Punjab, Pakistan</p>
-        <p>&copy; 2026 HSK Engineering and Architectural Solutions. All rights reserved.</p>
+        <p style="margin-top: 1.5rem; opacity: 0.7; font-size: 0.9rem;">&copy; 2026 HSK Engineering and Architectural Solutions. All rights reserved.</p>
     </footer>
 
+    <!-- JavaScript for Scroll Animations -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Stop observing once it has animated
+                    }
+                });
+            }, observerOptions);
+
+            const sections = document.querySelectorAll('.fade-in-section');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
 </body>
 </html>
