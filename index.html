@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HSK Engineering and Architectural Solutions</title>
+  <style>
+    :root {
+      --blue: #1f4e79;
+      --light-blue: #2e6ea3;
+      --white: #ffffff;
+      --gray: #f1f4f7;
+      --dark-gray: #44505c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--dark-gray);
+      background: var(--gray);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--blue), var(--light-blue));
+      color: var(--white);
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: 0.5px;
+    }
+
+    header p {
+      margin-top: 0.75rem;
+      font-size: 1.1rem;
+    }
+
+    section {
+      padding: 3rem 0;
+    }
+
+    h2 {
+      color: var(--blue);
+      margin-top: 0;
+      font-size: 1.9rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid #d8dee4;
+      border-radius: 10px;
+      padding: 1.2rem;
+      box-shadow: 0 4px 16px rgba(20, 39, 61, 0.08);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--blue);
+    }
+
+    footer {
+      background: var(--blue);
+      color: var(--white);
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>HSK Engineering and Architectural Solutions</h1>
+      <p>Professional Civil Engineering Services for Modern Infrastructure</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        HSK Engineering and Architectural Solutions is a civil engineering firm committed to
+        delivering safe, efficient, and sustainable designs. We combine technical precision with
+        practical experience to help clients bring projects from concept to construction.
+      </p>
+    </section>
+
+    <section id="services">
+      <h2>Services</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Structural Analysis</h3>
+          <p>
+            Detailed structural evaluations to ensure strength, stability, and compliance with
+            engineering standards.
+          </p>
+        </article>
+        <article class="card">
+          <h3>3D Modeling</h3>
+          <p>
+            Accurate 3D visualizations that improve design communication, coordination, and
+            project planning.
+          </p>
+        </article>
+        <article class="card">
+          <h3>CAD Drafting</h3>
+          <p>
+            Clear and precise CAD documentation for architectural and engineering workflows across
+            all project phases.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 HSK Engineering and Architectural Solutions</div>
+  </footer>
+</body>
+</html>
