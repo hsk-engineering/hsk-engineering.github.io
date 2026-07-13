@@ -1,140 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HSK Engineering and Architectural Solutions</title>
-  <style>
-    :root {
-      --blue: #1f4e79;
-      --light-blue: #2e6ea3;
-      --white: #ffffff;
-      --gray: #f1f4f7;
-      --dark-gray: #44505c;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--dark-gray);
-      background: var(--gray);
-      line-height: 1.6;
-    }
-
-    .container {
-      width: min(1100px, 92%);
-      margin: 0 auto;
-    }
-
-    header {
-      background: linear-gradient(135deg, var(--blue), var(--light-blue));
-      color: var(--white);
-      padding: 4rem 0;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: clamp(2rem, 4vw, 3rem);
-      letter-spacing: 0.5px;
-    }
-
-    header p {
-      margin-top: 0.75rem;
-      font-size: 1.1rem;
-    }
-
-    section {
-      padding: 3rem 0;
-    }
-
-    h2 {
-      color: var(--blue);
-      margin-top: 0;
-      font-size: 1.9rem;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.2rem;
-      margin-top: 1.5rem;
-    }
-
-    .card {
-      background: var(--white);
-      border: 1px solid #d8dee4;
-      border-radius: 10px;
-      padding: 1.2rem;
-      box-shadow: 0 4px 16px rgba(20, 39, 61, 0.08);
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: var(--blue);
-    }
-
-    footer {
-      background: var(--blue);
-      color: var(--white);
-      text-align: center;
-      padding: 1rem 0;
-      font-size: 0.9rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSK Engineering and Architectural Solutions</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --background-color: #f7fafc;
+            --text-color: #2d3748;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin-top: 0.5rem;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        nav {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 2rem;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+    </style>
 </head>
 <body>
-  <header>
+
+    <header>
+        <h1>HSK Engineering and Architectural Solutions</h1>
+        <p>Innovative Design, Structural Integrity, and Professional Drafting</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
     <div class="container">
-      <h1>HSK Engineering and Architectural Solutions</h1>
-      <p>Professional Civil Engineering Services for Modern Infrastructure</p>
+        
+        <section id="about">
+            <h2 class="section-title">About the Firm</h2>
+            <p>HSK Engineering and Architectural Solutions bridges the gap between robust structural engineering and innovative architectural design. We specialize in comprehensive project workflows, from conceptual drafting to rigorous structural analysis, ensuring every design is both visionary and structurally sound.</p>
+        </section>
+
+        <section id="services">
+            <h2 class="section-title">Our Services</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Structural Analysis & Engineering</h3>
+                    <p>Expert evaluation and mathematical modeling of structural components. Specializing in resolving boundary conditions and determining reaction components for structural layouts.</p>
+                </div>
+                <div class="card">
+                    <h3>3D Modeling & BIM</h3>
+                    <p>Comprehensive building information modeling using industry-standard tools including Revit and SketchUp to visualize complex structural and architectural concepts.</p>
+                </div>
+                <div class="card">
+                    <h3>Computer-Aided Design (CAD)</h3>
+                    <p>Precision 2D drafting and planar view layouts utilizing AutoCAD. We deliver clean, accurate, and professional documentation for all phases of construction and design.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <h2 class="section-title">Selected Projects</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Flood-Resilient Model Village Hospital</h3>
+                    <p><strong>Focus:</strong> Architectural & Structural Layout</p>
+                    <p>Designed a raised-structure basic health unit to withstand flood events, incorporating specialized design specifications for disaster-resilient healthcare infrastructure.</p>
+                </div>
+                <div class="card">
+                    <h3>Arts Workshop Extension</h3>
+                    <p><strong>Focus:</strong> Design Logic & Modular Systems</p>
+                    <p>Developed an architectural extension featuring modular rainscreen systems. The project included complete structural diagrams, performance observations, and a comprehensive defense presentation.</p>
+                </div>
+                <div class="card">
+                    <h3>Science & Technology Park</h3>
+                    <p><strong>Focus:</strong> Geotechnical Investigation</p>
+                    <p>Executed an open-ended laboratory mapping project, conducting essential soil testing including sieve analysis, Atterberg limits, and compaction testing to inform site stability.</p>
+                </div>
+            </div>
+        </section>
+
     </div>
-  </header>
 
-  <main class="container">
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        HSK Engineering and Architectural Solutions is a civil engineering firm committed to
-        delivering safe, efficient, and sustainable designs. We combine technical precision with
-        practical experience to help clients bring projects from concept to construction.
-      </p>
-    </section>
+    <footer id="contact">
+        <p>Ready to collaborate? Let's bring your project to life.</p>
+        <p>Email: hamzasakhawat06@gmail.com | Location: Rawalpindi, Punjab, Pakistan</p>
+        <p>&copy; 2026 HSK Engineering and Architectural Solutions. All rights reserved.</p>
+    </footer>
 
-    <section id="services">
-      <h2>Services</h2>
-      <div class="card-grid">
-        <article class="card">
-          <h3>Structural Analysis</h3>
-          <p>
-            Detailed structural evaluations to ensure strength, stability, and compliance with
-            engineering standards.
-          </p>
-        </article>
-        <article class="card">
-          <h3>3D Modeling</h3>
-          <p>
-            Accurate 3D visualizations that improve design communication, coordination, and
-            project planning.
-          </p>
-        </article>
-        <article class="card">
-          <h3>CAD Drafting</h3>
-          <p>
-            Clear and precise CAD documentation for architectural and engineering workflows across
-            all project phases.
-          </p>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">© 2026 HSK Engineering and Architectural Solutions</div>
-  </footer>
 </body>
 </html>
